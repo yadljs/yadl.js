@@ -1,6 +1,6 @@
 <p>
     <center>
-        <img src="https://gitlab.com/PassTheMayo/cord.js/raw/master/yadl.js.png" alt="YADL.js logo">
+        <img src="https://gitlab.com/PassTheMayo/yadl.js/raw/master/yadl.js.png" alt="YADL.js logo">
     </center>
 </p>
 
@@ -14,18 +14,24 @@ The library is designed to be a mix of discord.js and Eris while still being its
 Documentation:
 ==============
 
-## Functions
+## Classes
 
 <dl>
-<dt><a href="#YADL">YADL(token, [options])</a></dt>
-<dd><p>Creates a new instance of YADL.js.</p>
+<dt><a href="#SnowflakeUtil">SnowflakeUtil</a></dt>
+<dd><p>A Discord Snowflake builder.</p>
 </dd>
 </dl>
 
 ## Typedefs
 
 <dl>
-<dt><a href="#Status">Status</a> : <code>number</code></dt>
+<dt><a href="#Client">Client</a> : <code>class</code></dt>
+<dd><p>Represents the client.</p>
+</dd>
+<dt><a href="#Guild">Guild</a> : <code>class</code></dt>
+<dd><p>Represents a guild.</p>
+</dd>
+<dt><a href="#clientstatus">clientstatus</a> : <code>number</code></dt>
 <dd><p>The status of the client. Statuses:</p>
 <ul>
 <li>READY: 0</li>
@@ -34,7 +40,7 @@ Documentation:
 <li>DISCONNECTED: 3</li>
 </ul>
 </dd>
-<dt><a href="#VoiceStatus">VoiceStatus</a> : <code>number</code></dt>
+<dt><a href="#voicestatus">voicestatus</a> : <code>number</code></dt>
 <dd><p>The status of a voice connection. Statuses:</p>
 <ul>
 <li>CONNECTED: 0</li>
@@ -44,7 +50,7 @@ Documentation:
 <li>DISCONNECTED: 4</li>
 </ul>
 </dd>
-<dt><a href="#ChannelType">ChannelType</a> : <code>number</code></dt>
+<dt><a href="#channeltype">channeltype</a> : <code>number</code></dt>
 <dd><p>The type of a channel. Types:</p>
 <ul>
 <li>TEXT</li>
@@ -54,7 +60,7 @@ Documentation:
 <li>CATEGORY</li>
 </ul>
 </dd>
-<dt><a href="#APIError">APIError</a> : <code>string</code></dt>
+<dt><a href="#apierror">apierror</a> : <code>string</code></dt>
 <dd><p>An error encountered while performing an API request. Potential errors:</p>
 <ul>
 <li>UNKNOWN_ACCOUNT</li>
@@ -102,7 +108,7 @@ Documentation:
 <li>REACTION_BLOCKED</li>
 </ul>
 </dd>
-<dt><a href="#Event">Event</a> : <code>string</code></dt>
+<dt><a href="#event">event</a> : <code>string</code></dt>
 <dd><p>Events that are fired. Events:</p>
 <ul>
 <li>RATE_LIMIT</li>
@@ -153,7 +159,13 @@ Documentation:
 <li>DEBUG</li>
 </ul>
 </dd>
-<dt><a href="#ActivityType">ActivityType</a> : <code>string</code></dt>
+<dt><a href="#endpoint">endpoint</a> : <code>string</code></dt>
+<dd><p>The endpoints that the bot will use to access the API. Types:</p>
+<ul>
+<li>API</li>
+</ul>
+</dd>
+<dt><a href="#activitytype">activitytype</a> : <code>string</code></dt>
 <dd><p>The activity type of a user&#39;s presence. Types:</p>
 <ul>
 <li>PLAYING</li>
@@ -162,7 +174,7 @@ Documentation:
 <li>WATCHING</li>
 </ul>
 </dd>
-<dt><a href="#MentionType">MentionType</a> : <code>string</code></dt>
+<dt><a href="#mentiontype">mentiontype</a> : <code>string</code></dt>
 <dd><p>The type of mention included in a message. Types:</p>
 <ul>
 <li>EVERYTHING</li>
@@ -172,71 +184,187 @@ Documentation:
 <li>NONE</li>
 </ul>
 </dd>
+<dt><a href="#Snowflake">Snowflake</a> : <code>string</code></dt>
+<dd><p>A Twitter snowflake, except the epoch is 2015-01-01T00:00:00.000Z</p>
+</dd>
+<dt><a href="#DeconstructedSnowflake">DeconstructedSnowflake</a> : <code>Object</code></dt>
+<dd><p>A deconstructed snowflake.</p>
+</dd>
 </dl>
 
-<a name="YADL"></a>
+<a name="SnowflakeUtil"></a>
 
-## YADL(token, [options])
-Creates a new instance of YADL.js.
+## SnowflakeUtil
+A Discord Snowflake builder.
 
-**Kind**: global function  
-**See**: [YADL#Event](YADL#Event)  
+**Kind**: global class  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| token | <code>string</code> |  | The bot token. If using a user account, the token is the one found in local storage. |
-| [options] | <code>object</code> | <code>{}</code> | Options for the client. |
+* [SnowflakeUtil](#SnowflakeUtil)
+    * [.generate()](#SnowflakeUtil.generate) ⇒ [<code>Snowflake</code>](#Snowflake)
+    * [.deconstruct(snowflake)](#SnowflakeUtil.deconstruct) ⇒ [<code>DeconstructedSnowflake</code>](#DeconstructedSnowflake)
 
-**Example**  
-```js
-new YADL('bot_token');
-```
-**Example**  
-```js
-new YADL('bot_token', {disableEvents: [Constants.Events.TYPING_START, Constants.Events.TYPING_STOP]})
-```
-<a name="Status"></a>
+<a name="SnowflakeUtil.generate"></a>
 
-## Status : <code>number</code>
+### SnowflakeUtil.generate() ⇒ [<code>Snowflake</code>](#Snowflake)
+Generates a Discord snowflake.
+
+**Kind**: static method of [<code>SnowflakeUtil</code>](#SnowflakeUtil)  
+**Returns**: [<code>Snowflake</code>](#Snowflake) - The generated snowflake.  
+<a name="SnowflakeUtil.deconstruct"></a>
+
+### SnowflakeUtil.deconstruct(snowflake) ⇒ [<code>DeconstructedSnowflake</code>](#DeconstructedSnowflake)
+Deconstructs a Discord snowflake.
+
+**Kind**: static method of [<code>SnowflakeUtil</code>](#SnowflakeUtil)  
+**Returns**: [<code>DeconstructedSnowflake</code>](#DeconstructedSnowflake) - Deconstructed snowflake.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| snowflake | [<code>Snowflake</code>](#Snowflake) | Snowflake to deconstruct. |
+
+<a name="Client"></a>
+
+## Client : <code>class</code>
+Represents the client.
+
+**Kind**: global typedef  
+**Extends**: <code>EventEmitter</code>  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| token | <code>string</code> | The token to log in with. |
+| object= |  | options The options to add to the bot. |
+
+<a name="Client+login"></a>
+
+### client.login()
+Logs in to Discord.
+
+**Kind**: instance method of [<code>Client</code>](#Client)  
+<a name="Guild"></a>
+
+## Guild : <code>class</code>
+Represents a guild.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | The ID of the guild. |
+| name | <code>string</code> | The name of the guild. |
+| icon | <code>string</code> | The icon of the guild. |
+| splash | <code>string</code> | The splash of the guild. |
+| ownerID | [<code>Snowflake</code>](#Snowflake) | The owner of the guild's ID. |
+| region | <code>string</code> | The region of the guild. |
+| afk_channel_id | [<code>Snowflake</code>](#Snowflake) | The AFK channel ID of the guild. |
+| afk_timeout | <code>number</code> | The AFK timeout of the guild in seconds. |
+| verification_level | <code>number</code> | The level of verification required for the guild. |
+| default_message_notifications | <code>number</code> | The default message notification level of the guild. |
+| explicit_content_filter | <code>number</code> | The default explicit content filter level of the guild. |
+| roles | <code>Collection.&lt;Role&gt;</code> | The roles in the guild. |
+| emojis | <code>Collection.&lt;Emoji&gt;</code> | The emojis in the guild. |
+| features | <code>Collection.&lt;Feature&gt;</code> | The enabled guild features. |
+| mfa_level | <code>number</code> | The required MFA level for the guild. |
+| joined_at | <code>number</code> | The time the bot joined the guild. |
+| large | <code>boolean</code> | Whether this is considered a large guild. |
+| unavailable | <code>boolean</code> | Whether the guild is unavailable. |
+| member_count | <code>number</code> | The number of members in the guild. |
+| voice_states | <code>Collection.&lt;VoiceState&gt;</code> | The voice states in the guild. |
+| members | <code>Collection.&lt;Member&gt;</code> | The members in the guild. |
+| channels | <code>Collection.&lt;Channel&gt;</code> | The channels in the guild. |
+
+
+* [Guild](#Guild) : <code>class</code>
+    * [.iconURL](#Guild+iconURL) ⇒ <code>string</code>
+    * [.owner](#Guild+owner) ⇒ <code>GuildMember</code>
+
+<a name="Guild+iconURL"></a>
+
+### guild.iconURL ⇒ <code>string</code>
+Returns the icon URL for this guild.
+
+**Kind**: instance property of [<code>Guild</code>](#Guild)  
+**Returns**: <code>string</code> - The icon URL.  
+<a name="Guild+owner"></a>
+
+### guild.owner ⇒ <code>GuildMember</code>
+Gets the owner of this guild.
+
+**Kind**: instance property of [<code>Guild</code>](#Guild)  
+**Returns**: <code>GuildMember</code> - The owner of this guild.  
+<a name="clientstatus"></a>
+
+## clientstatus : <code>number</code>
 The status of the client. Statuses:* READY: 0* CONNECTING: 1* RECONNECTING: 2* DISCONNECTED: 3
 
 **Kind**: global typedef  
-<a name="VoiceStatus"></a>
+<a name="voicestatus"></a>
 
-## VoiceStatus : <code>number</code>
+## voicestatus : <code>number</code>
 The status of a voice connection. Statuses:* CONNECTED: 0* CONNECTING: 1* AUTHENTICATING: 2* RECONNECTING: 3* DISCONNECTED: 4
 
 **Kind**: global typedef  
-<a name="ChannelType"></a>
+<a name="channeltype"></a>
 
-## ChannelType : <code>number</code>
+## channeltype : <code>number</code>
 The type of a channel. Types:* TEXT* DM* VOICE* GROUP* CATEGORY
 
 **Kind**: global typedef  
-<a name="APIError"></a>
+<a name="apierror"></a>
 
-## APIError : <code>string</code>
+## apierror : <code>string</code>
 An error encountered while performing an API request. Potential errors:* UNKNOWN_ACCOUNT* UNKNOWN_APPLICATION* UNKNOWN_CHANNEL* UNKNOWN_GUILD* UNKNOWN_INTEGRATION* UNKNOWN_INVITE* UNKNOWN_MEMBER* UNKNOWN_MESSAGE* UNKNOWN_OVERWRITE* UNKNOWN_PROVIDER* UNKNOWN_ROLE* UNKNOWN_TOKEN* UNKNOWN_USER* UNKNOWN_EMOJI* BOT_PROHIBITED_ENDPOINT* BOT_ONLY_ENDPOINT* MAXIMUM_GUILDS* MAXIMUM_FRIENDS* MAXIMUM_PINS* MAXIMUM_ROLES* MAXIMUM_REACTIONS* UNAUTHORIZED* MISSING_ACCESS* INVALID_ACCOUNT_TYPE* CANNOT_EXECUTE_ON_DM* EMBED_DISABLED* CANNOT_EDIT_MESSAGE_BY_OTHER* CANNOT_SEND_EMPTY_MESSAGE* CANNOT_MESSAGE_USER* CANNOT_SEND_MESSAGES_IN_VOICE_CHANNEL* CHANNEL_VERIFICATION_LEVEL_TOO_HIGH* OAUTH2_APPLICATION_BOT_ABSENT* MAXIMUM_OAUTH2_APPLICATIONS* INVALID_OAUTH_STATE* MISSING_PERMISSIONS* INVALID_AUTHENTICATION_TOKEN* NOTE_TOO_LONG* INVALID_BULK_DELETE_QUANTITY* CANNOT_PIN_MESSAGE_IN_OTHER_CHANNEL* CANNOT_EXECUTE_ON_SYSTEM_MESSAGE* BULK_DELETE_MESSAGE_TOO_OLD* INVITE_ACCEPTED_TO_GUILD_NOT_CONTANING_BOT* REACTION_BLOCKED
 
 **Kind**: global typedef  
-<a name="Event"></a>
+<a name="event"></a>
 
-## Event : <code>string</code>
+## event : <code>string</code>
 Events that are fired. Events:* RATE_LIMIT* READY* RESUMED* GUILD_CREATE* GUILD_DELETE* GUILD_UPDATE* GUILD_UNAVAILABLE* GUILD_AVAILABLE* GUILD_MEMBER_ADD* GUILD_MEMBER_REMOVE* GUILD_MEMBER_UPDATE* GUILD_MEMBER_AVAILABLE* GUILD_MEMBER_SPEAKING* GUILD_MEMBERS_CHUNK* GUILD_ROLE_CREATE* GUILD_ROLE_DELETE* GUILD_ROLE_UPDATE* GUILD_EMOJI_CREATE* GUILD_EMOJI_DELETE* GUILD_EMOJI_UPDATE* GUILD_BAN_ADD* GUILD_BAN_REMOVE* CHANNEL_CREATE* CHANNEL_DELETE* CHANNEL_UPDATE* CHANNEL_PINS_UPDATE* MESSAGE_CREATE* MESSAGE_DELETE* MESSAGE_UPDATE* MESSAGE_BULK_DELETE* MESSAGE_REACTION_ADD* MESSAGE_REACTION_REMOVE* MESSAGE_REACTION_REMOVE_ALL* USER_UPDATE* USER_NOTE_UPDATE* USER_SETTINGS_UPDATE* USER_GUILD_SETTINGS_UPDATE* PRESENCE_UPDATE* VOICE_STATE_UPDATE* TYPING_START* TYPING_STOP* DISCONNECT* RECONNECTING* ERROR* WARN* DEBUG
 
 **Kind**: global typedef  
-<a name="ActivityType"></a>
+<a name="endpoint"></a>
 
-## ActivityType : <code>string</code>
+## endpoint : <code>string</code>
+The endpoints that the bot will use to access the API. Types:* API
+
+**Kind**: global typedef  
+<a name="activitytype"></a>
+
+## activitytype : <code>string</code>
 The activity type of a user's presence. Types:* PLAYING* STREAMING* LISTENING* WATCHING
 
 **Kind**: global typedef  
-<a name="MentionType"></a>
+<a name="mentiontype"></a>
 
-## MentionType : <code>string</code>
+## mentiontype : <code>string</code>
 The type of mention included in a message. Types:* EVERYTHING* HERE* ROLE* USER* NONE
 
 **Kind**: global typedef  
+<a name="Snowflake"></a>
+
+## Snowflake : <code>string</code>
+A Twitter snowflake, except the epoch is 2015-01-01T00:00:00.000Z
+
+**Kind**: global typedef  
+<a name="DeconstructedSnowflake"></a>
+
+## DeconstructedSnowflake : <code>Object</code>
+A deconstructed snowflake.
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| timestamp | <code>number</code> | Timestamp the snowflake was created |
+| date | <code>Date</code> | Date the snowflake was created |
+| workerID | <code>number</code> | Worker ID in the snowflake |
+| processID | <code>number</code> | Process ID in the snowflake |
+| increment | <code>number</code> | Increment in the snowflake |
+| binary | <code>string</code> | Binary representation of the snowflake |
+
 
 * * *
 
