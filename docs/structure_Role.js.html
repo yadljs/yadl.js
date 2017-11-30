@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: structure/GuildMember.js</title>
+    <title>JSDoc: Source: structure/Role.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: structure/GuildMember.js</h1>
+    <h1 class="page-title">Source: structure/Role.js</h1>
 
     
 
@@ -26,21 +26,25 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Member = require('./Member');
-
-/**
- * Represents a member of a guild.
- * @extends Member
- * @property {Guild} guild The guild that this Member belongs to.
+            <pre class="prettyprint source linenums"><code>/**
+ * Represents a role on a Discord guild.
+ * @property {Guild} guild The guild the role is on.
+ * @property {string} name The name of the role.
+ * @property {Snowflake} id The ID of the role.
+ * @property {number} color The color of the role.
+ * @property {Collection&lt;Permission>} permissions The permissions on the role.
  */
-class GuildMember extends Member {
-	constructor(options) {
-		super(options);
-		this.guild = options.guild;
-	}
-};
+class Role {
+    constructor(options) {
+        this.guild = options.guild;
+        this.name = options.name;
+        this.id = options.id;
+        this.color = options.color;
+        this.permissions = options.permissions;
+    }
+}
 
-module.exports = GuildMember;</code></pre>
+module.exports = Role;</code></pre>
         </article>
     </section>
 

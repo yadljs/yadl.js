@@ -20,6 +20,15 @@ Documentation:
 <dt><a href="#Guild">Guild</a></dt>
 <dd><p>Represents a guild.</p>
 </dd>
+<dt><a href="#GuildMember">GuildMember</a> ⇐ <code><a href="#Member">Member</a></code></dt>
+<dd><p>Represents a member of a guild.</p>
+</dd>
+<dt><a href="#Member">Member</a></dt>
+<dd><p>Represents a Discord member.</p>
+</dd>
+<dt><a href="#Role">Role</a></dt>
+<dd><p>Represents a role on a Discord guild.</p>
+</dd>
 <dt><a href="#SnowflakeUtil">SnowflakeUtil</a></dt>
 <dd><p>A Discord Snowflake builder. Cannot be instantated.</p>
 </dd>
@@ -41,12 +50,6 @@ Documentation:
 <dl>
 <dt><a href="#Client">Client</a> : <code>class</code></dt>
 <dd><p>Represents the client.</p>
-</dd>
-<dt><a href="#GuildMember">GuildMember</a> : <code>class</code></dt>
-<dd><p>Represents a member of a guild.</p>
-</dd>
-<dt><a href="#member">member</a> : <code>class</code></dt>
-<dd><p>Represents a Discord member.</p>
 </dd>
 <dt><a href="#ClientStatus">ClientStatus</a> : <code>number</code></dt>
 <dd><p>The status of the client. Statuses:</p>
@@ -230,7 +233,7 @@ Represents a guild.
 | verificationLevel | <code>number</code> | The level of verification required for the guild. |
 | defaultMessageNotifications | <code>number</code> | The default message notification level of the guild. |
 | explicitContentFilter | <code>number</code> | The default explicit content filter level of the guild. |
-| roles | <code>Collection.&lt;Role&gt;</code> | The roles in the guild. |
+| roles | [<code>Collection.&lt;Role&gt;</code>](#Role) | The roles in the guild. |
 | emojis | <code>Collection.&lt;Emoji&gt;</code> | The emojis in the guild. |
 | features | <code>Collection.&lt;Feature&gt;</code> | The enabled guild features. |
 | mfaLevel | <code>number</code> | The required MFA level for the guild. |
@@ -238,7 +241,7 @@ Represents a guild.
 | large | <code>boolean</code> | Whether this is considered a large guild. |
 | unavailable | <code>boolean</code> | Whether the guild is unavailable. |
 | memberCount | <code>number</code> | The number of members in the guild. |
-| members | <code>Collection.&lt;Member&gt;</code> | The members in the guild. |
+| members | [<code>Collection.&lt;Member&gt;</code>](#Member) | The members in the guild. |
 | channels | <code>Collection.&lt;Channel&gt;</code> | The channels in the guild. |
 
 
@@ -260,6 +263,49 @@ Gets the owner of this guild.
 
 **Kind**: instance property of [<code>Guild</code>](#Guild)  
 **Returns**: [<code>GuildMember</code>](#GuildMember) - The owner of this guild.  
+<a name="GuildMember"></a>
+
+## GuildMember ⇐ [<code>Member</code>](#Member)
+Represents a member of a guild.
+
+**Kind**: global class  
+**Extends**: [<code>Member</code>](#Member)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| guild | [<code>Guild</code>](#Guild) | The guild that this Member belongs to. |
+
+<a name="Member"></a>
+
+## Member
+Represents a Discord member.
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| id | [<code>Snowflake</code>](#Snowflake) | The user ID of the member. |
+| username | <code>string</code> | The username of the member. |
+| discriminator | <code>number</code> | The user of the member. |
+
+<a name="Role"></a>
+
+## Role
+Represents a role on a Discord guild.
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| guild | [<code>Guild</code>](#Guild) | The guild the role is on. |
+| name | <code>string</code> | The name of the role. |
+| id | [<code>Snowflake</code>](#Snowflake) | The ID of the role. |
+| color | <code>number</code> | The color of the role. |
+| permissions | <code>Collection.&lt;Permission&gt;</code> | The permissions on the role. |
+
 <a name="SnowflakeUtil"></a>
 
 ## SnowflakeUtil
@@ -322,33 +368,6 @@ Represents the client.
 Logs in to Discord.
 
 **Kind**: instance method of [<code>Client</code>](#Client)  
-<a name="GuildMember"></a>
-
-## GuildMember : <code>class</code>
-Represents a member of a guild.
-
-**Kind**: global typedef  
-**Extends**: <code>Member</code>  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| guild | [<code>Guild</code>](#Guild) | The guild that this Member belongs to. |
-
-<a name="member"></a>
-
-## member : <code>class</code>
-Represents a Discord member.
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| id | [<code>Snowflake</code>](#Snowflake) | The user ID of the member. |
-| username | <code>string</code> | The username of the member. |
-| discriminator | <code>number</code> | The user of the member. |
-
 <a name="ClientStatus"></a>
 
 ## ClientStatus : <code>number</code>
