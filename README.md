@@ -17,8 +17,22 @@ Documentation:
 ## Classes
 
 <dl>
+<dt><a href="#Guild">Guild</a></dt>
+<dd><p>Represents a guild.</p>
+</dd>
 <dt><a href="#SnowflakeUtil">SnowflakeUtil</a></dt>
-<dd><p>A Discord Snowflake builder.</p>
+<dd><p>A Discord Snowflake builder. Cannot be instantated.</p>
+</dd>
+</dl>
+
+## Members
+
+<dl>
+<dt><a href="#version">version</a></dt>
+<dd><p>The version of the library.</p>
+</dd>
+<dt><a href="#UserAgent">UserAgent</a></dt>
+<dd><p>The user agent for the library.</p>
 </dd>
 </dl>
 
@@ -28,10 +42,13 @@ Documentation:
 <dt><a href="#Client">Client</a> : <code>class</code></dt>
 <dd><p>Represents the client.</p>
 </dd>
-<dt><a href="#Guild">Guild</a> : <code>class</code></dt>
-<dd><p>Represents a guild.</p>
+<dt><a href="#GuildMember">GuildMember</a> : <code>class</code></dt>
+<dd><p>Represents a member of a guild.</p>
 </dd>
-<dt><a href="#clientstatus">clientstatus</a> : <code>number</code></dt>
+<dt><a href="#member">member</a> : <code>class</code></dt>
+<dd><p>Represents a Discord member.</p>
+</dd>
+<dt><a href="#ClientStatus">ClientStatus</a> : <code>number</code></dt>
 <dd><p>The status of the client. Statuses:</p>
 <ul>
 <li>READY: 0</li>
@@ -40,7 +57,7 @@ Documentation:
 <li>DISCONNECTED: 3</li>
 </ul>
 </dd>
-<dt><a href="#voicestatus">voicestatus</a> : <code>number</code></dt>
+<dt><a href="#VoiceStatus">VoiceStatus</a> : <code>number</code></dt>
 <dd><p>The status of a voice connection. Statuses:</p>
 <ul>
 <li>CONNECTED: 0</li>
@@ -50,7 +67,7 @@ Documentation:
 <li>DISCONNECTED: 4</li>
 </ul>
 </dd>
-<dt><a href="#channeltype">channeltype</a> : <code>number</code></dt>
+<dt><a href="#ChannelType">ChannelType</a> : <code>number</code></dt>
 <dd><p>The type of a channel. Types:</p>
 <ul>
 <li>TEXT</li>
@@ -60,7 +77,7 @@ Documentation:
 <li>CATEGORY</li>
 </ul>
 </dd>
-<dt><a href="#apierror">apierror</a> : <code>string</code></dt>
+<dt><a href="#APIError">APIError</a> : <code>string</code></dt>
 <dd><p>An error encountered while performing an API request. Potential errors:</p>
 <ul>
 <li>UNKNOWN_ACCOUNT</li>
@@ -108,7 +125,7 @@ Documentation:
 <li>REACTION_BLOCKED</li>
 </ul>
 </dd>
-<dt><a href="#event">event</a> : <code>string</code></dt>
+<dt><a href="#Event">Event</a> : <code>string</code></dt>
 <dd><p>Events that are fired. Events:</p>
 <ul>
 <li>RATE_LIMIT</li>
@@ -159,13 +176,13 @@ Documentation:
 <li>DEBUG</li>
 </ul>
 </dd>
-<dt><a href="#endpoint">endpoint</a> : <code>string</code></dt>
+<dt><a href="#Endpoint">Endpoint</a> : <code>string</code></dt>
 <dd><p>The endpoints that the bot will use to access the API. Types:</p>
 <ul>
 <li>API</li>
 </ul>
 </dd>
-<dt><a href="#activitytype">activitytype</a> : <code>string</code></dt>
+<dt><a href="#ActivityType">ActivityType</a> : <code>string</code></dt>
 <dd><p>The activity type of a user&#39;s presence. Types:</p>
 <ul>
 <li>PLAYING</li>
@@ -174,7 +191,7 @@ Documentation:
 <li>WATCHING</li>
 </ul>
 </dd>
-<dt><a href="#mentiontype">mentiontype</a> : <code>string</code></dt>
+<dt><a href="#MentionType">MentionType</a> : <code>string</code></dt>
 <dd><p>The type of mention included in a message. Types:</p>
 <ul>
 <li>EVERYTHING</li>
@@ -192,10 +209,61 @@ Documentation:
 </dd>
 </dl>
 
+<a name="Guild"></a>
+
+## Guild
+Represents a guild.
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | The ID of the guild. |
+| name | <code>string</code> | The name of the guild. |
+| icon | <code>string</code> | The icon of the guild. |
+| splash | <code>string</code> | The splash of the guild. |
+| ownerID | [<code>Snowflake</code>](#Snowflake) | The owner of the guild's ID. |
+| region | <code>string</code> | The region of the guild. |
+| afkChannelID | [<code>Snowflake</code>](#Snowflake) | The AFK channel ID of the guild. |
+| afkTimeout | <code>number</code> | The AFK timeout of the guild in seconds. |
+| verificationLevel | <code>number</code> | The level of verification required for the guild. |
+| defaultMessageNotifications | <code>number</code> | The default message notification level of the guild. |
+| explicitContentFilter | <code>number</code> | The default explicit content filter level of the guild. |
+| roles | <code>Collection.&lt;Role&gt;</code> | The roles in the guild. |
+| emojis | <code>Collection.&lt;Emoji&gt;</code> | The emojis in the guild. |
+| features | <code>Collection.&lt;Feature&gt;</code> | The enabled guild features. |
+| mfaLevel | <code>number</code> | The required MFA level for the guild. |
+| joinedAt | <code>number</code> | The time the bot joined the guild. |
+| large | <code>boolean</code> | Whether this is considered a large guild. |
+| unavailable | <code>boolean</code> | Whether the guild is unavailable. |
+| memberCount | <code>number</code> | The number of members in the guild. |
+| members | <code>Collection.&lt;Member&gt;</code> | The members in the guild. |
+| channels | <code>Collection.&lt;Channel&gt;</code> | The channels in the guild. |
+
+
+* [Guild](#Guild)
+    * [.iconURL](#Guild+iconURL) ⇒ <code>string</code>
+    * [.owner](#Guild+owner) ⇒ [<code>GuildMember</code>](#GuildMember)
+
+<a name="Guild+iconURL"></a>
+
+### guild.iconURL ⇒ <code>string</code>
+Returns the icon URL for this guild.
+
+**Kind**: instance property of [<code>Guild</code>](#Guild)  
+**Returns**: <code>string</code> - The icon URL.  
+<a name="Guild+owner"></a>
+
+### guild.owner ⇒ [<code>GuildMember</code>](#GuildMember)
+Gets the owner of this guild.
+
+**Kind**: instance property of [<code>Guild</code>](#Guild)  
+**Returns**: [<code>GuildMember</code>](#GuildMember) - The owner of this guild.  
 <a name="SnowflakeUtil"></a>
 
 ## SnowflakeUtil
-A Discord Snowflake builder.
+A Discord Snowflake builder. Cannot be instantated.
 
 **Kind**: global class  
 
@@ -222,6 +290,18 @@ Deconstructs a Discord snowflake.
 | --- | --- | --- |
 | snowflake | [<code>Snowflake</code>](#Snowflake) | Snowflake to deconstruct. |
 
+<a name="version"></a>
+
+## version
+The version of the library.
+
+**Kind**: global variable  
+<a name="UserAgent"></a>
+
+## UserAgent
+The user agent for the library.
+
+**Kind**: global variable  
 <a name="Client"></a>
 
 ## Client : <code>class</code>
@@ -242,103 +322,78 @@ Represents the client.
 Logs in to Discord.
 
 **Kind**: instance method of [<code>Client</code>](#Client)  
-<a name="Guild"></a>
+<a name="GuildMember"></a>
 
-## Guild : <code>class</code>
-Represents a guild.
+## GuildMember : <code>class</code>
+Represents a member of a guild.
+
+**Kind**: global typedef  
+**Extends**: <code>Member</code>  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| guild | [<code>Guild</code>](#Guild) | The guild that this Member belongs to. |
+
+<a name="member"></a>
+
+## member : <code>class</code>
+Represents a Discord member.
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| id | <code>number</code> | The ID of the guild. |
-| name | <code>string</code> | The name of the guild. |
-| icon | <code>string</code> | The icon of the guild. |
-| splash | <code>string</code> | The splash of the guild. |
-| ownerID | [<code>Snowflake</code>](#Snowflake) | The owner of the guild's ID. |
-| region | <code>string</code> | The region of the guild. |
-| afk_channel_id | [<code>Snowflake</code>](#Snowflake) | The AFK channel ID of the guild. |
-| afk_timeout | <code>number</code> | The AFK timeout of the guild in seconds. |
-| verification_level | <code>number</code> | The level of verification required for the guild. |
-| default_message_notifications | <code>number</code> | The default message notification level of the guild. |
-| explicit_content_filter | <code>number</code> | The default explicit content filter level of the guild. |
-| roles | <code>Collection.&lt;Role&gt;</code> | The roles in the guild. |
-| emojis | <code>Collection.&lt;Emoji&gt;</code> | The emojis in the guild. |
-| features | <code>Collection.&lt;Feature&gt;</code> | The enabled guild features. |
-| mfa_level | <code>number</code> | The required MFA level for the guild. |
-| joined_at | <code>number</code> | The time the bot joined the guild. |
-| large | <code>boolean</code> | Whether this is considered a large guild. |
-| unavailable | <code>boolean</code> | Whether the guild is unavailable. |
-| member_count | <code>number</code> | The number of members in the guild. |
-| voice_states | <code>Collection.&lt;VoiceState&gt;</code> | The voice states in the guild. |
-| members | <code>Collection.&lt;Member&gt;</code> | The members in the guild. |
-| channels | <code>Collection.&lt;Channel&gt;</code> | The channels in the guild. |
+| id | [<code>Snowflake</code>](#Snowflake) | The user ID of the member. |
+| username | <code>string</code> | The username of the member. |
+| discriminator | <code>number</code> | The user of the member. |
 
+<a name="ClientStatus"></a>
 
-* [Guild](#Guild) : <code>class</code>
-    * [.iconURL](#Guild+iconURL) ⇒ <code>string</code>
-    * [.owner](#Guild+owner) ⇒ <code>GuildMember</code>
-
-<a name="Guild+iconURL"></a>
-
-### guild.iconURL ⇒ <code>string</code>
-Returns the icon URL for this guild.
-
-**Kind**: instance property of [<code>Guild</code>](#Guild)  
-**Returns**: <code>string</code> - The icon URL.  
-<a name="Guild+owner"></a>
-
-### guild.owner ⇒ <code>GuildMember</code>
-Gets the owner of this guild.
-
-**Kind**: instance property of [<code>Guild</code>](#Guild)  
-**Returns**: <code>GuildMember</code> - The owner of this guild.  
-<a name="clientstatus"></a>
-
-## clientstatus : <code>number</code>
+## ClientStatus : <code>number</code>
 The status of the client. Statuses:* READY: 0* CONNECTING: 1* RECONNECTING: 2* DISCONNECTED: 3
 
 **Kind**: global typedef  
-<a name="voicestatus"></a>
+<a name="VoiceStatus"></a>
 
-## voicestatus : <code>number</code>
+## VoiceStatus : <code>number</code>
 The status of a voice connection. Statuses:* CONNECTED: 0* CONNECTING: 1* AUTHENTICATING: 2* RECONNECTING: 3* DISCONNECTED: 4
 
 **Kind**: global typedef  
-<a name="channeltype"></a>
+<a name="ChannelType"></a>
 
-## channeltype : <code>number</code>
+## ChannelType : <code>number</code>
 The type of a channel. Types:* TEXT* DM* VOICE* GROUP* CATEGORY
 
 **Kind**: global typedef  
-<a name="apierror"></a>
+<a name="APIError"></a>
 
-## apierror : <code>string</code>
+## APIError : <code>string</code>
 An error encountered while performing an API request. Potential errors:* UNKNOWN_ACCOUNT* UNKNOWN_APPLICATION* UNKNOWN_CHANNEL* UNKNOWN_GUILD* UNKNOWN_INTEGRATION* UNKNOWN_INVITE* UNKNOWN_MEMBER* UNKNOWN_MESSAGE* UNKNOWN_OVERWRITE* UNKNOWN_PROVIDER* UNKNOWN_ROLE* UNKNOWN_TOKEN* UNKNOWN_USER* UNKNOWN_EMOJI* BOT_PROHIBITED_ENDPOINT* BOT_ONLY_ENDPOINT* MAXIMUM_GUILDS* MAXIMUM_FRIENDS* MAXIMUM_PINS* MAXIMUM_ROLES* MAXIMUM_REACTIONS* UNAUTHORIZED* MISSING_ACCESS* INVALID_ACCOUNT_TYPE* CANNOT_EXECUTE_ON_DM* EMBED_DISABLED* CANNOT_EDIT_MESSAGE_BY_OTHER* CANNOT_SEND_EMPTY_MESSAGE* CANNOT_MESSAGE_USER* CANNOT_SEND_MESSAGES_IN_VOICE_CHANNEL* CHANNEL_VERIFICATION_LEVEL_TOO_HIGH* OAUTH2_APPLICATION_BOT_ABSENT* MAXIMUM_OAUTH2_APPLICATIONS* INVALID_OAUTH_STATE* MISSING_PERMISSIONS* INVALID_AUTHENTICATION_TOKEN* NOTE_TOO_LONG* INVALID_BULK_DELETE_QUANTITY* CANNOT_PIN_MESSAGE_IN_OTHER_CHANNEL* CANNOT_EXECUTE_ON_SYSTEM_MESSAGE* BULK_DELETE_MESSAGE_TOO_OLD* INVITE_ACCEPTED_TO_GUILD_NOT_CONTANING_BOT* REACTION_BLOCKED
 
 **Kind**: global typedef  
-<a name="event"></a>
+<a name="Event"></a>
 
-## event : <code>string</code>
+## Event : <code>string</code>
 Events that are fired. Events:* RATE_LIMIT* READY* RESUMED* GUILD_CREATE* GUILD_DELETE* GUILD_UPDATE* GUILD_UNAVAILABLE* GUILD_AVAILABLE* GUILD_MEMBER_ADD* GUILD_MEMBER_REMOVE* GUILD_MEMBER_UPDATE* GUILD_MEMBER_AVAILABLE* GUILD_MEMBER_SPEAKING* GUILD_MEMBERS_CHUNK* GUILD_ROLE_CREATE* GUILD_ROLE_DELETE* GUILD_ROLE_UPDATE* GUILD_EMOJI_CREATE* GUILD_EMOJI_DELETE* GUILD_EMOJI_UPDATE* GUILD_BAN_ADD* GUILD_BAN_REMOVE* CHANNEL_CREATE* CHANNEL_DELETE* CHANNEL_UPDATE* CHANNEL_PINS_UPDATE* MESSAGE_CREATE* MESSAGE_DELETE* MESSAGE_UPDATE* MESSAGE_BULK_DELETE* MESSAGE_REACTION_ADD* MESSAGE_REACTION_REMOVE* MESSAGE_REACTION_REMOVE_ALL* USER_UPDATE* USER_NOTE_UPDATE* USER_SETTINGS_UPDATE* USER_GUILD_SETTINGS_UPDATE* PRESENCE_UPDATE* VOICE_STATE_UPDATE* TYPING_START* TYPING_STOP* DISCONNECT* RECONNECTING* ERROR* WARN* DEBUG
 
 **Kind**: global typedef  
-<a name="endpoint"></a>
+<a name="Endpoint"></a>
 
-## endpoint : <code>string</code>
+## Endpoint : <code>string</code>
 The endpoints that the bot will use to access the API. Types:* API
 
 **Kind**: global typedef  
-<a name="activitytype"></a>
+<a name="ActivityType"></a>
 
-## activitytype : <code>string</code>
+## ActivityType : <code>string</code>
 The activity type of a user's presence. Types:* PLAYING* STREAMING* LISTENING* WATCHING
 
 **Kind**: global typedef  
-<a name="mentiontype"></a>
+<a name="MentionType"></a>
 
-## mentiontype : <code>string</code>
+## MentionType : <code>string</code>
 The type of mention included in a message. Types:* EVERYTHING* HERE* ROLE* USER* NONE
 
 **Kind**: global typedef  

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Client.js</title>
+    <title>JSDoc: Source: structure/Member.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Client.js</h1>
+    <h1 class="page-title">Source: structure/Member.js</h1>
 
     
 
@@ -26,43 +26,23 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const EventEmitter = require('events');
-const Constants = require('./util/Constants.js');
-const getGatewayUrl = require('./util/GetGatewayUrl');
-
-/**
- * Represents the client.
- * @extends EventEmitter
- * @typedef {class} Client
- * @property {string} token The token to log in with.
- * @property [object={}] options The options to add to the bot.
+            <pre class="prettyprint source linenums"><code>/**
+ * Represents a Discord member.
+ * @typedef {class} member 
+ * @property {Snowflake} id The user ID of the member.
+ * @property {string} username The username of the member.
+ * @property {number} discriminator The user of the member.
  */
-class Client extends EventEmitter {
-	constructor(token, options = {}) {
-		super();
-		if (!token) throw new Error('The client constructor must have a valid token.');
-		this.token = token;
-		this.ws = {};
-		this.options = options;
-	}
-	/**
-	 * Logs in to Discord.
-	 */
-	login() {
-		console.log('login() called');
-		getGatewayUrl().then((url) => {
-			this.ws.url = url;
-		}).catch((error) => {
-			throw error;
-		});
-	}
-
-	get Constants() {
-		return Constants;
+class Member {
+	constructor(options) {
+		this.id = options.id;
+		this.username = options.username;
+		this.discriminator = options.discriminator;
+		this.tag = options.username + '#' + options.discriminator;
 	}
 }
 
-module.exports = Client;</code></pre>
+module.exports = Member;</code></pre>
         </article>
     </section>
 
