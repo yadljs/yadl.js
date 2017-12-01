@@ -1,5 +1,5 @@
 <center>
-    <img src="https://gitlab.com/PassTheMayo/yadl.js/raw/master/yadl.js.png" alt="YADL.js logo">
+    <img src="https://yadl.js.org/logo.png" alt="YADL.js logo">
 </center>
 
 YADL.js - Yet Another Discord Library
