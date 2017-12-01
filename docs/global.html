@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Global</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Global - Documentation</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
-
 <body>
 
-<div id="main">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Guild.html">Guild</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="GuildMember.html">GuildMember</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Member.html">Member</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Role.html">Role</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SnowflakeUtil.html">SnowflakeUtil</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SnowflakeUtil.html#.deconstruct">deconstruct</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SnowflakeUtil.html#.generate">generate</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#UserAgent">UserAgent</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#version">version</a></span></li>
+</nav>
+
+<div id="main">
+    
     <h1 class="page-title">Global</h1>
+    
 
     
 
@@ -28,7 +41,9 @@
 
 <header>
     
-        <h2></h2>
+        <h2>
+        
+        </h2>
         
     
 </header>
@@ -87,9 +102,7 @@
 
     
 
-    
-
-    
+     
 
     
 
@@ -98,16 +111,15 @@
 
         
             
+<div class="section-members">
 <h4 class="name" id="UserAgent"><span class="type-signature"></span>UserAgent<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    The user agent for the library.
+    <p>The user agent for the library.</p>
 </div>
-
-
 
 
 
@@ -158,18 +170,20 @@
 
 
 
+
+</div>
+
         
             
+<div class="section-members">
 <h4 class="name" id="version"><span class="type-signature"></span>version<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    The version of the library.
+    <p>The version of the library.</p>
 </div>
-
-
 
 
 
@@ -220,6 +234,9 @@
 
 
 
+
+</div>
+
         
     
 
@@ -230,26 +247,21 @@
 
         
                 
+<div class="section-members">
 <h4 class="name" id="ActivityType">ActivityType</h4>
 
 
 
 
 <div class="description">
-    The activity type of a user's presence. Types:* PLAYING* STREAMING* LISTENING* WATCHING
+    <p>The activity type of a user's presence. Types:</p>
+<ul>
+<li>PLAYING</li>
+<li>STREAMING</li>
+<li>LISTENING</li>
+<li>WATCHING</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -297,31 +309,78 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>string</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="APIError">APIError</h4>
 
 
 
 
 <div class="description">
-    An error encountered while performing an API request. Potential errors:* UNKNOWN_ACCOUNT* UNKNOWN_APPLICATION* UNKNOWN_CHANNEL* UNKNOWN_GUILD* UNKNOWN_INTEGRATION* UNKNOWN_INVITE* UNKNOWN_MEMBER* UNKNOWN_MESSAGE* UNKNOWN_OVERWRITE* UNKNOWN_PROVIDER* UNKNOWN_ROLE* UNKNOWN_TOKEN* UNKNOWN_USER* UNKNOWN_EMOJI* BOT_PROHIBITED_ENDPOINT* BOT_ONLY_ENDPOINT* MAXIMUM_GUILDS* MAXIMUM_FRIENDS* MAXIMUM_PINS* MAXIMUM_ROLES* MAXIMUM_REACTIONS* UNAUTHORIZED* MISSING_ACCESS* INVALID_ACCOUNT_TYPE* CANNOT_EXECUTE_ON_DM* EMBED_DISABLED* CANNOT_EDIT_MESSAGE_BY_OTHER* CANNOT_SEND_EMPTY_MESSAGE* CANNOT_MESSAGE_USER* CANNOT_SEND_MESSAGES_IN_VOICE_CHANNEL* CHANNEL_VERIFICATION_LEVEL_TOO_HIGH* OAUTH2_APPLICATION_BOT_ABSENT* MAXIMUM_OAUTH2_APPLICATIONS* INVALID_OAUTH_STATE* MISSING_PERMISSIONS* INVALID_AUTHENTICATION_TOKEN* NOTE_TOO_LONG* INVALID_BULK_DELETE_QUANTITY* CANNOT_PIN_MESSAGE_IN_OTHER_CHANNEL* CANNOT_EXECUTE_ON_SYSTEM_MESSAGE* BULK_DELETE_MESSAGE_TOO_OLD* INVITE_ACCEPTED_TO_GUILD_NOT_CONTANING_BOT* REACTION_BLOCKED
+    <p>An error encountered while performing an API request. Potential errors:</p>
+<ul>
+<li>UNKNOWN_ACCOUNT</li>
+<li>UNKNOWN_APPLICATION</li>
+<li>UNKNOWN_CHANNEL</li>
+<li>UNKNOWN_GUILD</li>
+<li>UNKNOWN_INTEGRATION</li>
+<li>UNKNOWN_INVITE</li>
+<li>UNKNOWN_MEMBER</li>
+<li>UNKNOWN_MESSAGE</li>
+<li>UNKNOWN_OVERWRITE</li>
+<li>UNKNOWN_PROVIDER</li>
+<li>UNKNOWN_ROLE</li>
+<li>UNKNOWN_TOKEN</li>
+<li>UNKNOWN_USER</li>
+<li>UNKNOWN_EMOJI</li>
+<li>BOT_PROHIBITED_ENDPOINT</li>
+<li>BOT_ONLY_ENDPOINT</li>
+<li>MAXIMUM_GUILDS</li>
+<li>MAXIMUM_FRIENDS</li>
+<li>MAXIMUM_PINS</li>
+<li>MAXIMUM_ROLES</li>
+<li>MAXIMUM_REACTIONS</li>
+<li>UNAUTHORIZED</li>
+<li>MISSING_ACCESS</li>
+<li>INVALID_ACCOUNT_TYPE</li>
+<li>CANNOT_EXECUTE_ON_DM</li>
+<li>EMBED_DISABLED</li>
+<li>CANNOT_EDIT_MESSAGE_BY_OTHER</li>
+<li>CANNOT_SEND_EMPTY_MESSAGE</li>
+<li>CANNOT_MESSAGE_USER</li>
+<li>CANNOT_SEND_MESSAGES_IN_VOICE_CHANNEL</li>
+<li>CHANNEL_VERIFICATION_LEVEL_TOO_HIGH</li>
+<li>OAUTH2_APPLICATION_BOT_ABSENT</li>
+<li>MAXIMUM_OAUTH2_APPLICATIONS</li>
+<li>INVALID_OAUTH_STATE</li>
+<li>MISSING_PERMISSIONS</li>
+<li>INVALID_AUTHENTICATION_TOKEN</li>
+<li>NOTE_TOO_LONG</li>
+<li>INVALID_BULK_DELETE_QUANTITY</li>
+<li>CANNOT_PIN_MESSAGE_IN_OTHER_CHANNEL</li>
+<li>CANNOT_EXECUTE_ON_SYSTEM_MESSAGE</li>
+<li>BULK_DELETE_MESSAGE_TOO_OLD</li>
+<li>INVITE_ACCEPTED_TO_GUILD_NOT_CONTANING_BOT</li>
+<li>REACTION_BLOCKED</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -369,31 +428,40 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>string</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="ChannelType">ChannelType</h4>
 
 
 
 
 <div class="description">
-    The type of a channel. Types:* TEXT* DM* VOICE* GROUP* CATEGORY
+    <p>The type of a channel. Types:</p>
+<ul>
+<li>TEXT</li>
+<li>DM</li>
+<li>VOICE</li>
+<li>GROUP</li>
+<li>CATEGORY</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -441,31 +509,33 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>number</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="Client">Client</h4>
 
 
 
 
 <div class="description">
-    Represents the client.
+    <p>Represents the client.</p>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">class</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -505,7 +575,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -521,8 +591,10 @@
 
             
 
-            <td class="description last">The token to log in with.</td>
+            <td class="description last"><p>The token to log in with.</p></td>
         </tr>
+
+        
 
     
 
@@ -547,8 +619,10 @@
 
             
 
-            <td class="description last">options The options to add to the bot.</td>
+            <td class="description last"><p>options The options to add to the bot.</p></td>
         </tr>
+
+        
 
     
     </tbody>
@@ -599,31 +673,39 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>class</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="ClientStatus">ClientStatus</h4>
 
 
 
 
 <div class="description">
-    The status of the client. Statuses:* READY: 0* CONNECTING: 1* RECONNECTING: 2* DISCONNECTED: 3
+    <p>The status of the client. Statuses:</p>
+<ul>
+<li>READY: 0</li>
+<li>CONNECTING: 1</li>
+<li>RECONNECTING: 2</li>
+<li>DISCONNECTED: 3</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -671,31 +753,33 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>number</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="DeconstructedSnowflake">DeconstructedSnowflake</h4>
 
 
 
 
 <div class="description">
-    A deconstructed snowflake.
+    <p>A deconstructed snowflake.</p>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -733,7 +817,7 @@
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type"><code>number</code></span>
 
 
             
@@ -743,8 +827,10 @@
 
             
 
-            <td class="description last">Timestamp the snowflake was created</td>
+            <td class="description last"><p>Timestamp the snowflake was created</p></td>
         </tr>
+
+        
 
     
 
@@ -756,7 +842,7 @@
             <td class="type">
             
                 
-<span class="param-type">Date</span>
+<span class="param-type"><code>Date</code></span>
 
 
             
@@ -766,8 +852,10 @@
 
             
 
-            <td class="description last">Date the snowflake was created</td>
+            <td class="description last"><p>Date the snowflake was created</p></td>
         </tr>
+
+        
 
     
 
@@ -779,7 +867,7 @@
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type"><code>number</code></span>
 
 
             
@@ -789,8 +877,10 @@
 
             
 
-            <td class="description last">Worker ID in the snowflake</td>
+            <td class="description last"><p>Worker ID in the snowflake</p></td>
         </tr>
+
+        
 
     
 
@@ -802,7 +892,7 @@
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type"><code>number</code></span>
 
 
             
@@ -812,8 +902,10 @@
 
             
 
-            <td class="description last">Process ID in the snowflake</td>
+            <td class="description last"><p>Process ID in the snowflake</p></td>
         </tr>
+
+        
 
     
 
@@ -825,7 +917,7 @@
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type"><code>number</code></span>
 
 
             
@@ -835,8 +927,10 @@
 
             
 
-            <td class="description last">Increment in the snowflake</td>
+            <td class="description last"><p>Increment in the snowflake</p></td>
         </tr>
+
+        
 
     
 
@@ -848,7 +942,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -858,8 +952,10 @@
 
             
 
-            <td class="description last">Binary representation of the snowflake</td>
+            <td class="description last"><p>Binary representation of the snowflake</p></td>
         </tr>
+
+        
 
     
     </tbody>
@@ -910,31 +1006,36 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>Object</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="Endpoint">Endpoint</h4>
 
 
 
 
 <div class="description">
-    The endpoints that the bot will use to access the API. Types:* API
+    <p>The endpoints that the bot will use to access the API. Types:</p>
+<ul>
+<li>API</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -982,31 +1083,81 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>string</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="Event">Event</h4>
 
 
 
 
 <div class="description">
-    Events that are fired. Events:* RATE_LIMIT* READY* RESUMED* GUILD_CREATE* GUILD_DELETE* GUILD_UPDATE* GUILD_UNAVAILABLE* GUILD_AVAILABLE* GUILD_MEMBER_ADD* GUILD_MEMBER_REMOVE* GUILD_MEMBER_UPDATE* GUILD_MEMBER_AVAILABLE* GUILD_MEMBER_SPEAKING* GUILD_MEMBERS_CHUNK* GUILD_ROLE_CREATE* GUILD_ROLE_DELETE* GUILD_ROLE_UPDATE* GUILD_EMOJI_CREATE* GUILD_EMOJI_DELETE* GUILD_EMOJI_UPDATE* GUILD_BAN_ADD* GUILD_BAN_REMOVE* CHANNEL_CREATE* CHANNEL_DELETE* CHANNEL_UPDATE* CHANNEL_PINS_UPDATE* MESSAGE_CREATE* MESSAGE_DELETE* MESSAGE_UPDATE* MESSAGE_BULK_DELETE* MESSAGE_REACTION_ADD* MESSAGE_REACTION_REMOVE* MESSAGE_REACTION_REMOVE_ALL* USER_UPDATE* USER_NOTE_UPDATE* USER_SETTINGS_UPDATE* USER_GUILD_SETTINGS_UPDATE* PRESENCE_UPDATE* VOICE_STATE_UPDATE* TYPING_START* TYPING_STOP* DISCONNECT* RECONNECTING* ERROR* WARN* DEBUG
+    <p>Events that are fired. Events:</p>
+<ul>
+<li>RATE_LIMIT</li>
+<li>READY</li>
+<li>RESUMED</li>
+<li>GUILD_CREATE</li>
+<li>GUILD_DELETE</li>
+<li>GUILD_UPDATE</li>
+<li>GUILD_UNAVAILABLE</li>
+<li>GUILD_AVAILABLE</li>
+<li>GUILD_MEMBER_ADD</li>
+<li>GUILD_MEMBER_REMOVE</li>
+<li>GUILD_MEMBER_UPDATE</li>
+<li>GUILD_MEMBER_AVAILABLE</li>
+<li>GUILD_MEMBER_SPEAKING</li>
+<li>GUILD_MEMBERS_CHUNK</li>
+<li>GUILD_ROLE_CREATE</li>
+<li>GUILD_ROLE_DELETE</li>
+<li>GUILD_ROLE_UPDATE</li>
+<li>GUILD_EMOJI_CREATE</li>
+<li>GUILD_EMOJI_DELETE</li>
+<li>GUILD_EMOJI_UPDATE</li>
+<li>GUILD_BAN_ADD</li>
+<li>GUILD_BAN_REMOVE</li>
+<li>CHANNEL_CREATE</li>
+<li>CHANNEL_DELETE</li>
+<li>CHANNEL_UPDATE</li>
+<li>CHANNEL_PINS_UPDATE</li>
+<li>MESSAGE_CREATE</li>
+<li>MESSAGE_DELETE</li>
+<li>MESSAGE_UPDATE</li>
+<li>MESSAGE_BULK_DELETE</li>
+<li>MESSAGE_REACTION_ADD</li>
+<li>MESSAGE_REACTION_REMOVE</li>
+<li>MESSAGE_REACTION_REMOVE_ALL</li>
+<li>USER_UPDATE</li>
+<li>USER_NOTE_UPDATE</li>
+<li>USER_SETTINGS_UPDATE</li>
+<li>USER_GUILD_SETTINGS_UPDATE</li>
+<li>PRESENCE_UPDATE</li>
+<li>VOICE_STATE_UPDATE</li>
+<li>TYPING_START</li>
+<li>TYPING_STOP</li>
+<li>DISCONNECT</li>
+<li>RECONNECTING</li>
+<li>ERROR</li>
+<li>WARN</li>
+<li>DEBUG</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -1054,31 +1205,40 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>string</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="MentionType">MentionType</h4>
 
 
 
 
 <div class="description">
-    The type of mention included in a message. Types:* EVERYTHING* HERE* ROLE* USER* NONE
+    <p>The type of mention included in a message. Types:</p>
+<ul>
+<li>EVERYTHING</li>
+<li>HERE</li>
+<li>ROLE</li>
+<li>USER</li>
+<li>NONE</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -1126,31 +1286,33 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>string</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="Snowflake">Snowflake</h4>
 
 
 
 
 <div class="description">
-    A Twitter snowflake, except the epoch is 2015-01-01T00:00:00.000Z
+    <p>A Twitter snowflake, except the epoch is 2015-01-01T00:00:00.000Z</p>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -1198,31 +1360,40 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>string</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
                 
+<div class="section-members">
 <h4 class="name" id="VoiceStatus">VoiceStatus</h4>
 
 
 
 
 <div class="description">
-    The status of a voice connection. Statuses:* CONNECTED: 0* CONNECTING: 1* AUTHENTICATING: 2* RECONNECTING: 3* DISCONNECTED: 4
+    <p>The status of a voice connection. Statuses:</p>
+<ul>
+<li>CONNECTED: 0</li>
+<li>CONNECTING: 1</li>
+<li>AUTHENTICATING: 2</li>
+<li>RECONNECTING: 3</li>
+<li>DISCONNECTED: 4</li>
+</ul>
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -1270,8 +1441,21 @@
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>number</code></span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</div>
 
             
     
@@ -1286,17 +1470,13 @@
 
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Guild.html">Guild</a></li><li><a href="GuildMember.html">GuildMember</a></li><li><a href="Member.html">Member</a></li><li><a href="Role.html">Role</a></li><li><a href="SnowflakeUtil.html">SnowflakeUtil</a></li></ul><h3>Global</h3><ul><li><a href="global.html#UserAgent">UserAgent</a></li><li><a href="global.html#version">version</a></li></ul>
-</nav>
-
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 01 2017 07:53:11 GMT+0000 (GMT Standard Time)
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 01 2017 16:27:35 GMT+0000 (GMT Standard Time) using the Minami theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>

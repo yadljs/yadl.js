@@ -21,10 +21,13 @@
 		"websocket",
 		"ws"
 	],
-	"author": "Jacob Gunther (PassTheMayo)",
+	"author": "Jacob Gunther (PassTheMayo) & Lewis Crichton (LewisTehMinerz)",
 	"license": "UNLICENSED",
 	"bugs": {
 		"url": "https://gitlab.com/PassTheMayo/cord.js/issues"
 	},
-	"homepage": "https://gitlab.com/PassTheMayo/cord.js#README"
+	"homepage": "https://gitlab.com/PassTheMayo/cord.js#README",
+	"devDependencies": {
+		"minami": "^1.2.3"
+	}
 }
