@@ -1,9 +1,3 @@
-const Discord = require('./lib/Client.js');
+const Snowflake = require('./lib/util/Snowflake.js');
 
-const client = new Discord('');
-
-client.on('ready', () => {
-	console.log('Client is ready.');
-});
-
-client.login();
+console.log(new Snowflake({id: "9999999999999999999999999"}).id);
